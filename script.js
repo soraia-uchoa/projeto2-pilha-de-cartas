@@ -1,23 +1,30 @@
 let deck = []
 let option = ''
 
-do { 
-    option = prompt(` 
-        cartas do baralho: ${deck.length}
-        1 - adicione uma carta
-        2 - puxar carta 
-        3 - sair
-        `)
+do {
+    option = prompt(`
+        Cartas no baralho: ${deck.length}
+        1 - Adicionar uma carta
+        2 - Puxar uma carta
+        3 - Sair
+    `)
 
-      switch (option) {
+    switch (option) {
         case '1':
-            const new = prompt('adiciona uma carta:')
-            deck.push('newLatter')
+            const newCard = prompt('Qual é a carta:')
+            deck.push(newCard)
             break
-            case '2':
-                const 
-
-        
-            
-            
- }
+        case '2':
+            const drawCard = deck.pop()
+            if (!drawCard) {
+                alert('Não há nenhuma carta no baralho!')
+            } else {
+                alert(`Você puxou um(a) ${drawCard}`)
+            }
+        case '3':
+            alert('Saindo...')
+            break
+        default:
+            alert('Opção inválida!')
+    }
+} while (option !== '3')
